@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Layout</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background: #f0f4f8;
+    }
+
+    /* Navbar using Flexbox */
+    header {
+      background: #007bff;
+      color: white;
+      padding: 1rem;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Grid Layout */
+    .grid-container {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 1.5rem;
+      padding: 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .content, .sidebar {
+      padding: 1.5rem;
+      border-radius: 8px;
+    }
+    .content {
+      background: #fff;
+    }
+    .sidebar {
+      background: #e9ecef;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      background: #333;
+      color: white;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .grid-container {
+        grid-template-columns: 1fr;
+      }
+      .nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">MyWebsite</div>
+      <ul class="nav-links">
+        <li><a href="responsive.html">Home</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="todo.html">To-Do List</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Layout -->
+  <main class="grid-container">
+    <section class="content">
+      <h2>Welcome to My Website</h2>
+      <p>This layout is built using <strong>Flexbox</strong> for navigation and <strong>CSS Grid</strong> for content.</p>
+      <p>Resize the window to see how it adapts!</p>
+    </section>
+
+    <aside class="sidebar">
+      <h3>Sidebar</h3>
+      <ul>
+        <li>📘 HTML</li>
+        <li>🎨 CSS</li>
+        <li>⚡ JavaScript</li>
+      </ul>
+    </aside>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 MyWebsite | Responsive Layout Example</p>
+  </footer>
+
+  <!-- Optional JS -->
+  <script src="js/responsive.js"></script>
+</body>
+</html>
