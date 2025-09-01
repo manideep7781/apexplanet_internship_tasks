@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fetch API Example</title>
+  <style>
+    body {
+      text-align: center;
+      background: #e3f2fd;
+      font-family: Arial, sans-serif;
+      padding: 30px;
+    }
+    button {
+      padding: 10px 15px;
+      font-size: 16px;
+      margin: 10px;
+      border: none;
+      background: #43a047;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #2e7d32;
+    }
+    #joke {
+      margin-top: 20px;
+      font-size: 18px;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <h1>Random Joke Generator</h1>
+  <button onclick="getJoke()">Get a Joke</button>
+  <p id="joke"></p>
+  <script>
+    function getJoke() {
+      fetch("https://official-joke-api.appspot.com/random_joke")
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById("joke").innerText =
+            data.setup + " - " + data.punchline;
+        });
+    }
+  </script>
+</body>
+</html>

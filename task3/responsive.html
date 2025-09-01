@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      background: #f0f8ff;
+      text-align: center;
+      padding: 20px;
+    }
+    .container {
+      width: 80%;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    @media (max-width: 768px) {
+      body {
+        font-size: 16px;
+        background: #e0f7fa;
+      }
+      .container {
+        width: 95%;
+      }
+    }
+    @media (max-width: 480px) {
+      body {
+        font-size: 14px;
+        background: #ffe0b2;
+      }
+      .container {
+        width: 100%;
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Responsive Design Example</h1>
+    <p>This page adjusts layout and styles for desktop, tablet, and mobile screens.</p>
+  </div>
+</body>
+</html>
