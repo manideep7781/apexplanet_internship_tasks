@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do App</title>
+  <style>
+    body { font-family: Arial; padding: 20px; background: #f9f9f9; }
+    input, button { padding: 10px; margin: 5px; }
+    ul { list-style: none; padding: 0; }
+    li { background: #eee; padding: 10px; margin: 5px 0; display: flex; justify-content: space-between; }
+    button { cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>To-Do List</h1>
+  <input type="text" id="task" placeholder="Enter task">
+  <button onclick="addTask()">Add</button>
+  <ul id="taskList"></ul>
+
+  <script>
+    const taskList = document.getElementById("taskList");
+
+    function loadTasks() {
+      const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+      tasks.forEach(task => renderTask(task));
+    }
+
+    function addTask() {
+      const taskInput = document.getElementById("task");
+      if (taskInput.value.trim() === "") return;
+      const task = taskInput.value;
+      renderTask(task);
+      saveTask(task);
+      taskInput.value = "";
+    }
+
+    function renderTask(task) {
+      const li = document.createElement("li");
+      li.textContent = task;
+      const btn = document.createElement("button");
+      btn.textContent = "X";
+      btn.onclick = function() {
+        li.remove();
+        removeTask(task);
+      };
+      li.appendChild(btn);
+      taskList.appendChild(li);
+    }
+
+    function saveTask(task) {
+      const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+      tasks.push(task);
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+    }
+
+    function removeTask(task) {
+      let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+      tasks = tasks.filter(t => t !== task);
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+    }
+
+    loadTasks();
+  </script>
+</body>
+</html>
