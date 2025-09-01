@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My First Webpage</title>
+  <style>
+    body {
+      background-color: #f0f8ff;
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h1 {
+      color: darkblue;
+      text-align: center;
+    }
+    p {
+      color: #333;
+      line-height: 1.5;
+    }
+    img {
+      width: 200px;
+      border-radius: 10px;
+      display: block;
+      margin: 10px auto;
+    }
+    a {
+      color: darkgreen;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    button {
+      background-color: darkblue;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      display: block;
+      margin: 20px auto;
+    }
+    button:hover {
+      background-color: navy;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to My First Webpage</h1>
+  <p>This is a simple webpage created using <strong>HTML</strong>, styled with <strong>CSS</strong>, and made interactive with <strong>JavaScript</strong>.</p>
+  <img src="https://via.placeholder.com/200" alt="Sample Image">
+  <p>Visit <a href="https://www.google.com" target="_blank">Google</a> to search for more information.</p>
+  <button onclick="showMessage()">Click Me!</button>
+  <script>
+    function showMessage() {
+      alert("Hello! You clicked the button.");
+    }
+  </script>
+</body>
+</html>
