@@ -1,0 +1,20 @@
+[
+  {
+    "id": "smart-vehicle-qr",
+    "title": "Smart Vehicle Information System (QR)",
+    "short": "Flask app that generates QR codes for vehicle records and shows details.",
+    "description": "A Python-Flask web app where users add vehicle details and the app generates a QR. Scanning shows vehicle info, efficiency, and status. Useful for verification and resale.",
+    "tech": "Python, Flask, HTML, CSS, MySQL",
+    "image": "images/project-placeholder.jpg",
+    "github": "https://github.com/manideep7781/smart-vehicle-qr"
+  },
+  {
+    "id": "vehicle-efficiency",
+    "title": "Vehicle Efficiency Calculator",
+    "short": "Tool to compute efficiency from kms, fuel, and produce recommendation.",
+    "description": "Calculates fuel efficiency and shows tips for improvement. Includes CSV export and downloadable report.",
+    "tech": "Python, Flask, JavaScript",
+    "image": "images/project-placeholder.jpg",
+    "github": "#"
+  }
+]

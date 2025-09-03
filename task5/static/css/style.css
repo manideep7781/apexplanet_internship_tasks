@@ -1,0 +1,57 @@
+/* static/css/style.css - compact, readable, responsive */
+:root{
+  --accent:#066;
+  --muted:#666;
+  --maxw:1000px;
+}
+*{box-sizing:border-box}
+body{font-family:Inter, system-ui, Arial, sans-serif;margin:0;color:#222;line-height:1.5}
+.container{max-width:var(--maxw);margin:0 auto;padding:20px}
+.site-header{background:#f9fcfd;border-bottom:1px solid #eee;position:sticky;top:0;z-index:40}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;gap:12px;align-items:center}
+.profile-img{width:56px;height:56px;border-radius:8px;object-fit:cover}
+.name{margin:0;font-size:18px}
+.tagline{margin:0;color:var(--muted);font-size:13px}
+.main-nav{display:flex;gap:14px}
+.main-nav a{color:var(--accent);text-decoration:none;font-weight:600}
+.menu-toggle{display:none;background:none;border:0;font-size:20px}
+
+/* Sections */
+.section{padding:28px 0;border-bottom:1px solid #f1f3f4}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.skill{margin-bottom:8px}
+.skill-title{font-weight:600;margin-bottom:6px}
+.skill-bar{background:#e9f2f1;border-radius:999px;height:12px;overflow:hidden}
+.skill-fill{height:100%;width:0;background:linear-gradient(90deg,var(--accent),#0a9);transition:width 1s ease}
+
+/* Projects */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+.card{background:#fff;border:1px solid #eee;border-radius:8px;padding:12px;box-shadow:0 1px 3px rgba(0,0,0,0.03)}
+.card img{width:100%;height:140px;object-fit:cover;border-radius:6px}
+.card h3{margin:8px 0 4px;font-size:16px}
+.card p{margin:0;color:var(--muted);font-size:14px}
+.card button{margin-top:8px;padding:8px 10px;border:0;background:var(--accent);color:#fff;border-radius:6px;cursor:pointer}
+
+/* Modal */
+.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.45)}
+.modal[aria-hidden="false"]{display:flex}
+.modal-content{background:#fff;padding:18px;border-radius:8px;max-width:720px;width:92%;position:relative}
+.modal-image{width:100%;height:200px;object-fit:cover;border-radius:6px}
+.modal-close{position:absolute;top:8px;right:8px;border:0;background:#fff;font-size:22px;cursor:pointer}
+
+/* Contact form */
+.contact-form{display:grid;gap:10px;max-width:600px}
+.contact-form label{display:flex;flex-direction:column;font-size:14px}
+.contact-form input,.contact-form textarea{padding:8px;border:1px solid #ddd;border-radius:6px}
+.contact-form button{width:140px;padding:10px;border-radius:6px;border:0;background:var(--accent);color:#fff;cursor:pointer}
+.form-msg{margin-top:6px;color:var(--muted)}
+
+/* Footer */
+.site-footer{padding:16px 0;text-align:center;color:var(--muted)}
+
+/* Responsive */
+@media (max-width:800px){
+  .main-nav{display:none}
+  .menu-toggle{display:block}
+}
